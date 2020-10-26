@@ -1,72 +1,4 @@
-<!doctype html>
-<html class="no-js" lang="">
-
-<head>
-  <meta charset="utf-8">
-  <title></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
-
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans" rel="stylesheet">
-  <link rel="stylesheet" href="css/main.css">
-
-  <meta name="theme-color" content="#fafafa">
-</head>
-
-<body>
-  <!--[if IE]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
-
-  <header class="site-header">
-    <div class="hero">
-      <div class="contenido-header">
-        <nav class="redes-sociales">
-          <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-          <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-          <a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
-          <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
-          <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-        </nav>
-        <div class="informacion-evento">
-          <div class="clearfix">
-            <p class="fecha"><i class="fa fa-calendar" aria-hidden="true"></i> 10-12 Dic</p>
-            <p class="ciudad"><i class="fa fa-map-marker" aria-hidden="true"></i> San Juan de Lurigancho, PE</p>
-          </div>
-          <h1 class="nombre-sitio">GdlWebCamp</h1>
-          <p class="slogan">La mejor conferencia de <span>Diseño Web</span></p>
-        </div>
-      </div>
-    </div>
-  </header>
-  
-  <div class="barra">
-    <div class="contenedor clearfix">
-      <div class="logo">
-        <img src="img/logo.svg" alt="logo gdlwebcamp">
-      </div>
-
-      <div class="menu-movil">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-      <nav class="navegacion-principal clearfix">
-        <a href="#">Conferencia</a>
-        <a href="#">Calendario</a>
-        <a href="#">Invitados</a>
-        <a href="#">Reservaciones</a>
-      </nav>
-    </div>
-  </div>
-
+<?php include_once 'includes/templates/header.php'; ?>
   <section class="seccion contenedor">
     <h2>La mejor conferencia de Diseño web en Español.</h2>
     <p>
@@ -93,22 +25,56 @@
             <a href="#conferencias"><i class="fa fa-comment" aria-hidden="true"></i> Conferencias</a>
             <a href="#seminaros"><i class="fa fa-university" aria-hidden="true"></i> Seminarios</a>
           </nav>
-          <div id="talleres" class="info-curso ocultar ">
+          <div id="talleres" class="info-curso ocultar clearfix">
             <div class="detalle-evento">
               <h3>HTML, CSS3 y JavaScript</h3>
-              <p><i class="fa fa-clock-o" aria-hidden="true"></i> 16:00 hrs</p>
+              <p><i class="fa fa-clock-o" aria-hidden="true"></i> 17:00 hrs</p>
               <p><i class="fa fa-calendar" aria-hidden="true"></i> 10 de Dic</p>
-              <p><i class="fa fa-user" aria-hidden="true"></i> Juan Pablo de la torre Valdez</p>
+              <p><i class="fa fa-user" aria-hidden="true"></i> Harold Garcia</p>
             </div>
 
             <div class="detalle-evento">
-              <h3>Responsive Web Design</h3>
-              <p><i class="fa fa-clock-o" aria-hidden="true"></i> 20:00 hrs</p>
+              <h3>Aprende a programar en una mañana</h3>
+              <p><i class="fa fa-clock-o" aria-hidden="true"></i> 10:00 hrs</p>
               <p><i class="fa fa-calendar" aria-hidden="true"></i> 10 de Dic</p>
               <p><i class="fa fa-user" aria-hidden="true"></i> Juan Pablo de la torre Valdez</p>
             </div>
             <a href="" class="button float-right">Ver Todos</a>
           </div><!--#talleres-->
+
+          <div id="conferencias" class="info-curso ocultar clearfix">
+            <div class="detalle-evento">
+              <h3>Como ser freelancer</h3>
+              <p><i class="fa fa-clock-o" aria-hidden="true"></i> 10:00 hrs</p>
+              <p><i class="fa fa-calendar" aria-hidden="true"></i> 10 de Dic</p>
+              <p><i class="fa fa-user" aria-hidden="true"></i> Gregorio Sanchéz</p>
+            </div>
+
+            <div class="detalle-evento">
+              <h3>Tecnologías del Futuro</h3>
+              <p><i class="fa fa-clock-o" aria-hidden="true"></i> 17:00 hrs</p>
+              <p><i class="fa fa-calendar" aria-hidden="true"></i> 10 de Dic</p>
+              <p><i class="fa fa-user" aria-hidden="true"></i> Susan Sanchez</p>
+            </div>
+            <a href="" class="button float-right">Ver Todos</a>
+          </div><!--#conferencias-->
+
+          <div id="seminaros" class="info-curso ocultar clearfix">
+            <div class="detalle-evento">
+              <h3>Diseño UI/UX para móviles</h3>
+              <p><i class="fa fa-clock-o" aria-hidden="true"></i> 17:00 hrs</p>
+              <p><i class="fa fa-calendar" aria-hidden="true"></i> 11 de Dic</p>
+              <p><i class="fa fa-user" aria-hidden="true"></i> Harold Garcia</p>
+            </div>
+
+            <div class="detalle-evento">
+              <h3>Aprende a programar en una mañana</h3>
+              <p><i class="fa fa-clock-o" aria-hidden="true"></i> 20:00 hrs</p>
+              <p><i class="fa fa-calendar" aria-hidden="true"></i> 10 de Dic</p>
+              <p><i class="fa fa-user" aria-hidden="true"></i> Susana Rivera</p>
+            </div>
+            <a href="" class="button float-right">Ver Todos</a>
+          </div><!--#seminaros-->
         </div><!--programa evento-->
       </div><!--contenedor -->
     </div><!-- contenido programa-->
@@ -159,10 +125,10 @@
   <div class="contador parallax">
     <div class="contenedor">
       <ul class="resumen-evento clearfix">
-        <li><p class="numero">6</p> Invitados</li>
-        <li><p class="numero">15</p> Talleres</li>
-        <li><p class="numero">3</p> Días</li>
-        <li><p class="numero">9</p> Conferencias</li>
+        <li><p class="numero"></p> Invitados</li>
+        <li><p class="numero"></p> Talleres</li>
+        <li><p class="numero"></p> Días</li>
+        <li><p class="numero"></p> Conferencias</li>
       </ul>
     </div>
   </div>
@@ -267,60 +233,11 @@
     <h2>Faltan</h2>
     <div class="cuenta-regresiva contenedor">
       <ul class="clearfix">
-        <li><p class="numero">80</p> días</li>
-        <li><p class="numero">15</p> horas</li>
-        <li><p class="numero">5</p> minutos</li>
-        <li><p class="numero">30</p> segundos</li>
+        <li><p id="dias" class="numero"></p> días</li>
+        <li><p id="horas" class="numero"></p> horas</li>
+        <li><p id="minutos" class="numero"></p> minutos</li>
+        <li><p id="segundos" class="numero"></p> segundos</li>
       </ul>
     </div>
   </section>
 
-  <footer class="site-footer">
-    <div class="contenedor clearfix">
-      <div class="footer-informacion">
-        <h3>Sobre <span>GDLWEBCAMP</span></h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-          Nemo obcaecati ipsam enim magnam fuga accusantium voluptas 
-          dolorum eveniet quo saepe.
-        </p>
-      </div>
-      <div class="ultimos-tweets">
-        <h3>Últimos <span>tweets</span></h3>
-        <ul>
-          <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi, reprehenderit?</li>
-          <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi, reprehenderit?</li>
-          <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi, reprehenderit?</li>
-        </ul>
-      </div>
-      <div class="menu">
-        <h3>Redes <span>Sociales</span></h3>
-        <nav class="redes-sociales">
-          <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-          <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-          <a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
-          <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
-          <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-        </nav>
-      </div>
-    </div>
-    <p class="copyright">
-      Todos los derechos Reservados GDLWEBCAMP 2k20
-    </p>
-  </footer>
-
-  <script src="js/vendor/modernizr-3.8.0.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
-
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
-</body>
-
-</html>
