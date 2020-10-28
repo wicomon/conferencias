@@ -1,4 +1,5 @@
 <?php include_once 'includes/templates/header.php'; ?>
+
   <section class="seccion contenedor">
     <h2>La mejor conferencia de Diseño web en Español.</h2>
     <p>
@@ -20,11 +21,41 @@
       <div class="contenedor">
         <div class="programa-evento clearfix">
           <h2>Programa del evento</h2>
+
+          <?php
+            try {
+              require_once('includes/funciones/bd_conexion.php');
+              $sql = " SELECT * FROM `categoria_evento` ";
+              $resultado = $conn->query($sql);
+            } catch (\Exception $e) {
+              echo $e->getMessage();
+            }
+          ?>
+
+
           <nav class="menu-programa">
-            <a href="#talleres"><i class="fa fa-code" aria-hidden="true"></i> Talleres</a>
-            <a href="#conferencias"><i class="fa fa-comment" aria-hidden="true"></i> Conferencias</a>
-            <a href="#seminaros"><i class="fa fa-university" aria-hidden="true"></i> Seminarios</a>
+            <?php while($cat = $resultado->fetch_array(MYSQLI_ASSOC) ) { ?>
+            <a href="#<?php echo strtolower($cat['cat_evento']); ?>"><i class="fa <?php echo $cat['icono']; ?>" aria-hidden="true"></i> <?php echo $cat['cat_evento']; ?></a>
+            <?php } ?>
           </nav>
+
+          <div id="seminarios" class="info-curso ocultar clearfix">
+            <div class="detalle-evento">
+              <h3>Diseño UI/UX para móviles</h3>
+              <p><i class="fa fa-clock-o" aria-hidden="true"></i> 17:00 hrs</p>
+              <p><i class="fa fa-calendar" aria-hidden="true"></i> 11 de Dic</p>
+              <p><i class="fa fa-user" aria-hidden="true"></i> Harold Garcia</p>
+            </div>
+
+            <div class="detalle-evento">
+              <h3>Aprende a programar en una mañana</h3>
+              <p><i class="fa fa-clock-o" aria-hidden="true"></i> 20:00 hrs</p>
+              <p><i class="fa fa-calendar" aria-hidden="true"></i> 10 de Dic</p>
+              <p><i class="fa fa-user" aria-hidden="true"></i> Susana Rivera</p>
+            </div>
+            <a href="" class="button float-right">Ver Todos</a>
+          </div><!--#seminaros-->
+          
           <div id="talleres" class="info-curso ocultar clearfix">
             <div class="detalle-evento">
               <h3>HTML, CSS3 y JavaScript</h3>
@@ -58,69 +89,12 @@
             </div>
             <a href="" class="button float-right">Ver Todos</a>
           </div><!--#conferencias-->
-
-          <div id="seminaros" class="info-curso ocultar clearfix">
-            <div class="detalle-evento">
-              <h3>Diseño UI/UX para móviles</h3>
-              <p><i class="fa fa-clock-o" aria-hidden="true"></i> 17:00 hrs</p>
-              <p><i class="fa fa-calendar" aria-hidden="true"></i> 11 de Dic</p>
-              <p><i class="fa fa-user" aria-hidden="true"></i> Harold Garcia</p>
-            </div>
-
-            <div class="detalle-evento">
-              <h3>Aprende a programar en una mañana</h3>
-              <p><i class="fa fa-clock-o" aria-hidden="true"></i> 20:00 hrs</p>
-              <p><i class="fa fa-calendar" aria-hidden="true"></i> 10 de Dic</p>
-              <p><i class="fa fa-user" aria-hidden="true"></i> Susana Rivera</p>
-            </div>
-            <a href="" class="button float-right">Ver Todos</a>
-          </div><!--#seminaros-->
         </div><!--programa evento-->
       </div><!--contenedor -->
     </div><!-- contenido programa-->
   </section>
 
-  <section class="invitados contenedor seccion">
-    <h2>Nuestros invitados</h2>
-    <ul class="lista-invitados clearfix">
-      <li>
-        <div class="invitado">
-          <img src="img/invitado1.jpg" alt="">
-          <p>Rafael Bautista</p>
-        </div>
-      </li>
-      <li>
-        <div class="invitado">
-          <img src="img/invitado2.jpg" alt="">
-          <p>Shari Herrera</p>
-        </div>
-      </li>
-      <li>
-        <div class="invitado">
-          <img src="img/invitado3.jpg" alt="">
-          <p>Gregorio Sanchez</p>
-        </div>
-      </li>
-      <li>
-        <div class="invitado">
-          <img src="img/invitado4.jpg" alt="">
-          <p>Susana Herrera</p>
-        </div>
-      </li>
-      <li>
-        <div class="invitado">
-          <img src="img/invitado5.jpg" alt="">
-          <p>Harold Garcia</p>
-        </div>
-      </li>
-      <li>
-        <div class="invitado">
-          <img src="img/invitado6.jpg" alt="">
-          <p>Susan Sanchez</p>
-        </div>
-      </li>
-    </ul>
-  </section>
+  <?php include_once 'includes/templates/invitados.php'; ?>
 
   <div class="contador parallax">
     <div class="contenedor">
@@ -241,3 +215,4 @@
     </div>
   </section>
 
+<?php include_once 'includes/templates/footer.php'; ?>

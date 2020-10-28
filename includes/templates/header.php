@@ -15,13 +15,22 @@
   <link rel="stylesheet" href="css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans" rel="stylesheet">
 
+  <?php
+    $archivo = basename($_SERVER['PHP_SELF']);
+    $pagina = str_replace(".php", "", $archivo);
+    if ($pagina == 'invitados' || $pagina == 'index') {
+      echo '<link rel="stylesheet" href="css/colorbox.css">';
+    }else if($pagina == 'conferencia'){
+      echo '<link rel="stylesheet" href="css/lightbox.css">';
+    }
+  ?>
+
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
   <link rel="stylesheet" href="css/main.css">
-
   <meta name="theme-color" content="#fafafa">
 </head>
 
-<body>
+<body class="<?php echo $pagina; ?>">
   <!--[if IE]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
@@ -51,7 +60,9 @@
   <div class="barra">
     <div class="contenedor clearfix">
       <div class="logo">
-        <img src="img/logo.svg" alt="logo gdlwebcamp">
+        <a href="index.php">
+            <img src="img/logo.svg" alt="logo gdlwebcamp">
+        </a>
       </div>
 
       <div class="menu-movil">
@@ -61,10 +72,10 @@
       </div>
 
       <nav class="navegacion-principal clearfix">
-        <a href="#">Conferencia</a>
-        <a href="#">Calendario</a>
-        <a href="#">Invitados</a>
-        <a href="registro.html">Reservaciones</a>
+        <a class="<?php if($pagina == 'conferencia'){echo 'activo';} ?>" href="conferencia.php">Conferencia</a>
+        <a class="<?php if($pagina == 'calendario'){echo 'activo';} ?>" href="calendario.php">Calendario</a>
+        <a class="<?php if($pagina == 'invitados'){echo 'activo';} ?>" href="invitados.php">Invitados</a>
+        <a class="<?php if($pagina == 'registro'){echo 'activo';} ?>" href="registro.php">Reservaciones</a>
       </nav>
     </div>
   </div>

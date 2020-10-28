@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function(){
         }).addTo(map);
 
         L.marker([-11.950416, -77.005389]).addTo(map)
-            .bindPopup('Aqui ta el negocio <br>perrito')
+            .bindPopup('Aqui ta el negocio ')
             .openPopup();
     }
 
@@ -39,6 +39,8 @@ document.addEventListener('DOMContentLoaded', function(){
     var camisas = document.getElementById('camisa_evento');
     var etiquetas = document.getElementById('etiquetas');
 
+
+    botonRegistro.disabled = true;
 
     if (document.getElementById('calcular')) {
     
@@ -118,6 +120,9 @@ document.addEventListener('DOMContentLoaded', function(){
                 }
                 
                 suma.innerHTML = "$" + totalPagar.toFixed(2);
+
+                botonRegistro.disabled = false;
+                document.getElementById('total_pedido').value = totalPagar;
             }
         }
     }
@@ -161,6 +166,11 @@ $(function(){
 
     //Lettering 
     $('.nombre-sitio').lettering();
+
+    //agregar clase a menú
+    // $('.body.conferencia .navegacion-principal a:contains("conferencia")').addClass('activo');
+    // $('.body.calendario .navegacion-principal a:contains("conferencia")').addClass('activo');
+    // $('.body.invitados .navegacion-principal a:contains("conferencia")').addClass('activo');
 
     //menu fijo
     var windowHeight = $(window).height();
@@ -209,4 +219,11 @@ $(function(){
         $('#minutos').html(event.strftime('%M'));
         $('#segundos').html(event.strftime('%S'));
     });
+
+    //Colorbox
+    if (document.querySelector('.invitado-info')) {
+        $('.invitado-info').colorbox({inline:true, width:"50%"});
+    }
+    
+
 });
