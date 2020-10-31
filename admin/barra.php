@@ -31,5 +31,11 @@
           <i class="fas fa-th-large"></i>
         </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="login.php?cerrar_sesion=true" role="button">
+         Cerrar Sesión <i class="nav-icon fas fa-sign-out-alt"></i>
+        </a>
+      </li>
+      
     </ul>
   </nav>

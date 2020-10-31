@@ -1,4 +1,15 @@
-<?php include_once 'header.php'; ?>
+<?php 
+  session_start();
+  if ( isset($_GET['cerrar_sesion']) ) {
+    $cerrar_sesion = $_GET['cerrar_sesion'];
+  }
+  
+  if (isset($cerrar_sesion)) {
+    session_destroy();
+  }
+  include_once 'header.php'; 
+
+?>
 
 <div class="container d-flex justify-content-center">
 
@@ -12,7 +23,7 @@
     <div class="card-body login-card-body">
       <p class="login-box-msg">Logea para iniciar tu sesion.</p>
 
-      <form action="insertar-admin.php" method="post" id="login-admin" name="login-admin-form">
+      <form action="modelo-admin.php" method="post" id="login-admin" name="login-admin-form">
         <div class="input-group mb-3">
           <input type="text" class="form-control" name="usuario" placeholder="Usuario">
           <div class="input-group-append">

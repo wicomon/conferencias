@@ -1,4 +1,8 @@
-<?php include_once 'header.php'; ?>
+<?php 
+  include_once 'funciones/sesiones.php';
+  include_once 'funciones/funciones.php';
+  include_once 'header.php'; 
+?>
 
 <!-- Site wrapper -->
 <div class="wrapper">
